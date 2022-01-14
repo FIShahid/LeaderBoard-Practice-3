@@ -177,3 +177,68 @@ span{
     height:29.38px;
     border-radius:14.69px;
 }
+
+/*------------------ navbar---------------- */
+
+#nav-toggler{
+    display: none;
+}
+.nav-toggler-icon{
+    display: none;
+    color: whitesmoke;
+    font-size: 30px;
+}
+/* ------------------------
+      Responsive-Layout
+--------------------------- */
+
+@media only screen and (max-width:688px) {
+    .container{
+        width: 100%;
+     
+    }
+    .players ,.blogs, .courses{
+       grid-template-columns: repeat(1,1fr);
+}
+.player{
+    flex-direction: column;
+}
+ }
+ @media only screen and (min-width:668px) and (max-width:992px) {
+     .container{
+         width: 100%;
+     }
+     .players{
+         grid-template-columns: repeat(2,1fr);
+     }
+     .blogs, .courses{
+         grid-template-columns: repeat(1,1fr);
+     }
+     
+ }
+ @media (max-width:800px) {
+    .nav-toggler-icon{
+        display: block;
+    }
+    .navigation{
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(128, 0, 128, 0.623);
+        padding: 20px 0;
+        transform: translateY(-330px);
+        transition: .5s, ease-in-out;
+        
+    }
+     .navigation-items{
+         flex-direction: column;
+         align-items: center;
+         padding: 10px 0;
+     }
+     #nav-toggler:checked~ .navigation{
+         transform: translateY(0px);
+     }
+ }
